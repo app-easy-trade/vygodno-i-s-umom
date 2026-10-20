@@ -1,0 +1,1 @@
+import{PageHeader}from"@/components/ui";import{AssistantChat}from"@/components/assistant-chat";export default function Page(){return <><PageHeader title="AI-ассистент" description="Тут будет ваш персональный помощник по платформе и финансовым стратегиям. Он поможет разобраться в торговле простым языком, сравнить стратегии и понять риски."/><AssistantChat/></>}
