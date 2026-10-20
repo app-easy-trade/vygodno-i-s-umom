@@ -18,12 +18,14 @@ function ActiveLink({
   icon: Icon,
   onClick,
   showLabel = true,
+  alwaysShowLabel = false,
 }: {
   href: string;
   label: string;
   icon: typeof House;
   onClick?: () => void;
   showLabel?: boolean;
+  alwaysShowLabel?: boolean;
 }) {
   const p = usePathname(),
     active = href === "/" ? p === href : p.startsWith(href);
@@ -36,7 +38,7 @@ function ActiveLink({
     >
       <Icon className="shrink-0" size={18} />
       <span
-        className={`whitespace-nowrap transition ${showLabel ? "opacity-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:opacity-100" : "opacity-0"}`}
+        className={`whitespace-nowrap transition ${alwaysShowLabel ? "opacity-100" : showLabel ? "opacity-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:opacity-100" : "opacity-0"}`}
       >
         {label}
       </span>
@@ -153,6 +155,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     key={x.href}
                     {...x}
                     onClick={() => setMore(false)}
+                    alwaysShowLabel
                   />
                 ))}
             </div>
