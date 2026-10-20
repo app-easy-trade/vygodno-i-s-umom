@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
+const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  basePath: isGitHubPages ? "/vygodno-i-s-umom" : "",
+  images: {
+    unoptimized: true,
+  },
   turbopack: {
     rules: {
       "*.css": {

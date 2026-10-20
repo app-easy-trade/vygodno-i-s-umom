@@ -20,6 +20,10 @@ npm start
 ## Deployment на Vercel
 Загрузите проект в GitHub, импортируйте репозиторий на Vercel и оставьте стандартные настройки Next.js. Альтернатива: `npx vercel` из папки проекта.
 
+## GitHub Pages
+
+Публикация запускается автоматически при каждом push в ветку `main`. Статическая версия доступна по адресу `https://app-easy-trade.github.io/vygodno-i-s-umom/`.
+
 ## Структура
 - `src/app` — страницы и маршруты App Router
 - `src/components` — переиспользуемые компоненты
